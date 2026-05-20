@@ -13504,6 +13504,8 @@ div#notebook {
 <ul>
 <li class="math-index-block math-index-proposition"><a href="#electric-field-from-potentials"><span class="math-number">1.1</span> Proposition: Proposition — Electric Field from Scalar and Vector Potentials</a></li>
 <li class="math-index-block math-index-proposition"><a href="#magnetic-field-from-vector-potential"><span class="math-number">1.2</span> Proposition: Proposition — Magnetic Field from the Vector Potential</a></li>
+<li class="math-index-block math-index-proposition"><a href="#electric-field-from-potentials"><span class="math-number">1.3</span> Proposition: Proposition — Electric Field Written in Terms of Potentials</a></li>
+<li class="math-index-block math-index-proposition"><a href="#magnetic-field-from-vector-potential"><span class="math-number">1.4</span> Proposition: Proposition — Existence of the Vector Potential</a></li>
 </ul>
 </nav>
 </div>
@@ -13661,6 +13663,190 @@ $$</p>
 
         </details>
         
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=63b6f76a"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="electric-field-from-potentials" class="math-block proposition">
+        <summary class="math-block-summary">
+        <h3 id="Proposition-%E2%80%94-Electric-Field-Written-in-Terms-of-Potentials"><span class="math-number">1.3 Proposition: Proposition — Electric Field Written in Terms of Potentials</span></h3><p>Let the magnetic field be represented by a vector potential $\vec{A}$:</p>
+<p>$$
+\vec{B}=\nabla\times\vec{A}.
+$$</p>
+<p>Then Faraday's law,</p>
+<p>$$
+\nabla\times\vec{E}
+=
+-\frac{\partial \vec{B}}{\partial t},
+$$</p>
+<p>implies that the electric field can be written as</p>
+<p>$$
+\vec{E}
+=
+-\nabla\phi
+-
+\frac{\partial \vec{A}}{\partial t},
+$$</p>
+<p>for some scalar potential $\phi$.</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Start from Faraday's law:</p>
+<p>$$
+\nabla\times\vec{E}
+=
+-\frac{\partial \vec{B}}{\partial t}.
+$$</p>
+<p>Using</p>
+<p>$$
+\vec{B}
+=
+\nabla\times\vec{A},
+$$</p>
+<p>we get</p>
+<p>$$
+\nabla\times\vec{E}
+=
+-\frac{\partial}{\partial t}
+\left(
+\nabla\times\vec{A}
+\right).
+$$</p>
+<p>Since the time derivative commutes with the curl,</p>
+<p>$$
+\nabla\times\vec{E}
+=
+-\nabla\times
+\frac{\partial\vec{A}}{\partial t}.
+$$</p>
+<p>Move everything to the same side:</p>
+<p>$$
+\nabla\times\vec{E}
++
+\nabla\times
+\frac{\partial\vec{A}}{\partial t}
+=
+0.
+$$</p>
+<p>Using linearity of the curl,</p>
+<p>$$
+\nabla\times
+\left(
+\vec{E}
++
+\frac{\partial\vec{A}}{\partial t}
+\right)
+=
+0.
+$$</p>
+<p>Therefore, the vector field</p>
+<p>$$
+\vec{E}
++
+\frac{\partial\vec{A}}{\partial t}
+$$</p>
+<p>is irrotational.</p>
+<p>Hence, locally, it can be written as the gradient of a scalar function. We define that scalar function as $-\phi$:</p>
+<p>$$
+\vec{E}
++
+\frac{\partial\vec{A}}{\partial t}
+=
+-\nabla\phi.
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\vec{E}
+=
+-\nabla\phi
+-
+\frac{\partial\vec{A}}{\partial t}.
+$$</p>
+<!-- proof:end -->
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=b4a36281"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="magnetic-field-from-vector-potential" class="math-block proposition">
+        <summary class="math-block-summary">
+        <h3 id="Proposition-%E2%80%94-Existence-of-the-Vector-Potential"><span class="math-number">1.4 Proposition: Proposition — Existence of the Vector Potential</span></h3><p>Let the magnetic field satisfy Gauss's law for magnetism:</p>
+<p>$$
+\nabla\cdot\vec{B}=0.
+$$</p>
+<p>Then there exists a vector field $\vec{A}$ such that</p>
+<p>$$
+\vec{B}
+=
+\nabla\times\vec{A}.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Start from Maxwell's equation for the magnetic field:</p>
+<p>$$
+\nabla\cdot\vec{B}=0.
+$$</p>
+<p>A vector field with zero divergence is called solenoidal.</p>
+<p>Now recall the vector calculus identity</p>
+<p>$$
+\nabla\cdot(\nabla\times\vec{F})=0
+$$</p>
+<p>for every sufficiently smooth vector field $\vec{F}$.</p>
+<p>Therefore, every curl automatically has zero divergence.</p>
+<p>The converse statement from vector calculus (Poincaré lemma in simply connected regions) states that if a vector field has zero divergence, then locally it can be represented as the curl of another vector field.</p>
+<p>Hence, since</p>
+<p>$$
+\nabla\cdot\vec{B}=0,
+$$</p>
+<p>there exists a vector field $\vec{A}$ such that</p>
+<p>$$
+\vec{B}
+=
+\nabla\times\vec{A}.
+$$</p>
+<p>The field $\vec{A}$ is called the vector potential.</p>
+<p>Finally, substituting this expression into Gauss's law for magnetism gives</p>
+<p>$$
+\nabla\cdot\vec{B}
+=
+\nabla\cdot(\nabla\times\vec{A})
+=
+0,
+$$</p>
+<p>confirming consistency with Maxwell's equations.</p>
+<!-- proof:end -->
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=f5389ec8"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 </div>
 </div>
 </div>
