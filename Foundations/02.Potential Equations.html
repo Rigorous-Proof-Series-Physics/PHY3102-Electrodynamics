@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>01. Maxwell Equations</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>02.Potential Equations</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs';
   
   mermaid.initialize({ startOnLoad: true });
@@ -13497,161 +13497,190 @@ div#notebook {
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=1b09b75b"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=ee092b3f"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <nav id="math-index" class="math-index">
 <ul>
-<li class="math-index-block math-index-proposition"><a href="#electric-field-from-potentials"><span class="math-number">1.1</span> Proposition: Proposition — Electric Field from Scalar and Vector Potentials</a></li>
-<li class="math-index-block math-index-proposition"><a href="#magnetic-field-from-vector-potential"><span class="math-number">1.2</span> Proposition: Proposition — Magnetic Field from the Vector Potential</a></li>
+<li class="math-index-block math-index-proposition"><a href="#wave-equation-scalar-potential-lorenz-gauge"><span class="math-number">1.1</span> Proposition: Proposition — Wave Equation for the Scalar Potential in the Lorenz Gauge</a></li>
 </ul>
 </nav>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=216aa25b"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=4ba4c003"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-        <details id="electric-field-from-potentials" class="math-block proposition">
+        <details id="wave-equation-scalar-potential-lorenz-gauge" class="math-block proposition">
         <summary class="math-block-summary">
-        <h3 id="Proposition-%E2%80%94-Electric-Field-from-Scalar-and-Vector-Potentials"><span class="math-number">1.1 Proposition: Proposition — Electric Field from Scalar and Vector Potentials</span></h3><p>Let</p>
+        <h3 id="Proposition-%E2%80%94-Wave-Equation-for-the-Scalar-Potential-in-the-Lorenz-Gauge"><span class="math-number">1.1 Proposition: Proposition — Wave Equation for the Scalar Potential in the Lorenz Gauge</span></h3><p>Let the electromagnetic potentials be defined by</p>
 <p>$$
-V(\mathbf{r},t)
+\vec{B}=\nabla\times \vec{A}
 $$</p>
-<p>be the scalar potential and</p>
+<p>and</p>
 <p>$$
-\mathbf{A}(\mathbf{r},t)
+\vec{E}=-\nabla\phi-\frac{\partial \vec{A}}{\partial t}.
 $$</p>
-<p>the vector potential associated with an electromagnetic field.</p>
-<p>Then the electric field is given by</p>
+<p>Assume the Lorenz gauge condition</p>
 <p>$$
-\mathbf{E}
-=
--\nabla V
--
-\frac{\partial \mathbf{A}}{\partial t}.
-$$</p>
-        </summary>
-
-        
-        <div class="proof-content">
-        <p>From Maxwell–Faraday equation,</p>
-<p>$$
-\nabla \times \mathbf{E}
-=
--
-\frac{\partial \mathbf{B}}{\partial t},
-$$</p>
-<p>introduce a vector potential</p>
-<p>$$
-\mathbf{B}
-=
-\nabla \times \mathbf{A}.
-$$</p>
-<p>Substituting into Faraday’s law yields</p>
-<p>$$
-\nabla \times \mathbf{E}
-=
--
-\frac{\partial}{\partial t}
-(\nabla \times \mathbf{A}).
-$$</p>
-<p>Using the linearity of the curl operator,</p>
-<p>$$
-\nabla \times
-\left(
-\mathbf{E}
+\nabla\cdot\vec{A}
 +
-\frac{\partial \mathbf{A}}{\partial t}
-\right)
+\frac{1}{c^2}\frac{\partial \phi}{\partial t}
 =
 0.
 $$</p>
-<p>A vector field with vanishing curl is conservative, therefore there exists a scalar function</p>
+<p>Then the scalar potential $\phi$ satisfies</p>
 <p>$$
-V(\mathbf{r},t)
-$$</p>
-<p>such that</p>
-<p>$$
-\mathbf{E}
-+
-\frac{\partial \mathbf{A}}{\partial t}
-=
+\nabla^2\phi
 -
-\nabla V.
-$$</p>
-<p>Hence,</p>
-<p>$$
-\mathbf{E}
+\frac{1}{c^2}\frac{\partial^2\phi}{\partial t^2}
 =
--\nabla V
--
-\frac{\partial \mathbf{A}}{\partial t}.
-$$</p>
-        </div>
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=63013155"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="magnetic-field-from-vector-potential" class="math-block proposition">
-        <summary class="math-block-summary">
-        <h3 id="Proposition-%E2%80%94-Magnetic-Field-from-the-Vector-Potential"><span class="math-number">1.2 Proposition: Proposition — Magnetic Field from the Vector Potential</span></h3><p>Let</p>
-<p>$$
-\mathbf{B}(\mathbf{r},t)
-$$</p>
-<p>be a magnetic field satisfying</p>
-<p>$$
-\nabla \cdot \mathbf{B}=0.
-$$</p>
-<p>Then there exists a vector potential</p>
-<p>$$
-\mathbf{A}(\mathbf{r},t)
-$$</p>
-<p>such that</p>
-<p>$$
-\mathbf{B}
-=
-\nabla \times \mathbf{A}.
+-\frac{\rho}{\epsilon_0}.
 $$</p>
         </summary>
 
         
         <div class="proof-content">
-        <p>One of Maxwell’s equations states that</p>
+        <p>Start from Gauss's law with source:</p>
 <p>$$
-\nabla \cdot \mathbf{B}=0.
-$$</p>
-<p>A fundamental identity from vector calculus is</p>
-<p>$$
-\nabla \cdot (\nabla \times \mathbf{A})=0
-$$</p>
-<p>for every sufficiently smooth vector field</p>
-<p>$$
-\mathbf{A}.
-$$</p>
-<p>Therefore any field written as a curl automatically satisfies the divergence-free condition.</p>
-<p>Conversely, in a simply connected region, every smooth vector field with zero divergence can be represented as the curl of another vector field. Hence there exists a vector potential</p>
-<p>$$
-\mathbf{A}
-$$</p>
-<p>such that</p>
-<p>$$
-\mathbf{B}
+\nabla\cdot\vec{E}
 =
-\nabla \times \mathbf{A}.
+\frac{\rho}{\epsilon_0}.
 $$</p>
+<p>Substitute the potential expression for the electric field:</p>
+<p>$$
+\vec{E}
+=
+-\nabla\phi
+-
+\frac{\partial \vec{A}}{\partial t}.
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\nabla\cdot\vec{E}
+=
+\nabla\cdot
+\left(
+-\nabla\phi
+-
+\frac{\partial \vec{A}}{\partial t}
+\right).
+$$</p>
+<p>Using linearity of the divergence,</p>
+<p>$$
+\nabla\cdot\vec{E}
+=
+-\nabla\cdot\nabla\phi
+-
+\nabla\cdot\frac{\partial \vec{A}}{\partial t}.
+$$</p>
+<p>Since</p>
+<p>$$
+\nabla\cdot\nabla\phi
+=
+\nabla^2\phi,
+$$</p>
+<p>and assuming the spatial divergence commutes with the time derivative,</p>
+<p>$$
+\nabla\cdot\frac{\partial \vec{A}}{\partial t}
+=
+\frac{\partial}{\partial t}
+\left(
+\nabla\cdot\vec{A}
+\right),
+$$</p>
+<p>we get</p>
+<p>$$
+\nabla\cdot\vec{E}
+=
+-\nabla^2\phi
+-
+\frac{\partial}{\partial t}
+\left(
+\nabla\cdot\vec{A}
+\right).
+$$</p>
+<p>By Gauss's law,</p>
+<p>$$
+-\nabla^2\phi
+-
+\frac{\partial}{\partial t}
+\left(
+\nabla\cdot\vec{A}
+\right)
+=
+\frac{\rho}{\epsilon_0}.
+$$</p>
+<p>Now use the Lorenz gauge condition:</p>
+<p>$$
+\nabla\cdot\vec{A}
++
+\frac{1}{c^2}\frac{\partial \phi}{\partial t}
+=
+0.
+$$</p>
+<p>Hence,</p>
+<p>$$
+\nabla\cdot\vec{A}
+=
+-
+\frac{1}{c^2}
+\frac{\partial \phi}{\partial t}.
+$$</p>
+<p>Taking a time derivative,</p>
+<p>$$
+\frac{\partial}{\partial t}
+\left(
+\nabla\cdot\vec{A}
+\right)
+=
+-
+\frac{1}{c^2}
+\frac{\partial^2\phi}{\partial t^2}.
+$$</p>
+<p>Substitute this into Gauss's law:</p>
+<p>$$
+-\nabla^2\phi
+-
+\left(
+-
+\frac{1}{c^2}
+\frac{\partial^2\phi}{\partial t^2}
+\right)
+=
+\frac{\rho}{\epsilon_0}.
+$$</p>
+<p>Thus,</p>
+<p>$$
+-\nabla^2\phi
++
+\frac{1}{c^2}
+\frac{\partial^2\phi}{\partial t^2}
+=
+\frac{\rho}{\epsilon_0}.
+$$</p>
+<p>Multiplying both sides by $-1$, we obtain</p>
+<p>$$
+\nabla^2\phi
+-
+\frac{1}{c^2}
+\frac{\partial^2\phi}{\partial t^2}
+=
+-
+\frac{\rho}{\epsilon_0}.
+$$</p>
+<p>Therefore, in the Lorenz gauge, the scalar potential obeys the inhomogeneous wave equation</p>
+<p>$$
+\nabla^2\phi
+-
+\frac{1}{c^2}
+\frac{\partial^2\phi}{\partial t^2}
+=
+-
+\frac{\rho}{\epsilon_0}.
+$$</p>
+<!-- proof:end -->
         </div>
         
 
@@ -13661,6 +13690,12 @@ $$</p>
 
         </details>
         
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=a21b9e04"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 </div>
 </div>
 </div>
